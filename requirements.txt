@@ -1,0 +1,18 @@
+asgiref==3.3.4
+certifi==2021.5.30
+chardet==3.0.4
+dj-database-url==0.5.0
+dj-static==0.0.6
+Django==3.2.2
+idna==2.8
+psycopg2-binary==2.8.2
+gunicorn==20.1.0
+olefile==0.46
+Pillow @ file:///opt/concourse/worker/volumes/live/ca23594b-6e35-4c8c-5637-50ac0b550473/volume/pillow_1617386168018/work
+pytz==2021.1
+sqlparse==0.4.1
+whitenoise==5.2.0
+requests==2.21.0
+setuptools==49.2.0
+static3==0.7.0
+urllib3==1.24.1

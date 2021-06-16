@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+
+<!-- Jumbotron -->
+<div class="p-5 text-center bg-light">
+    <h1 class="mb-3">{{ request.site.siteconfig.top_title }}</h1>
+    <h4 class="mb-3">{{ request.site.siteconfig.top_subtitle }}</h4>
+    <a class="btn btn-primary" href="" role="button">Call to action</a>
+</div>
+<!-- Jumbotron -->
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for item in post_list %}
+    <div class="col">
+        <div class="card h-100">
+            {% if item.thumbnail %}
+            <img src="{{ item.thumbnail.url }}" class="card-img-top" alt="{{ item.title }}" />
+            {% else %}
+            <img src="https://mdbootstrap.com/img/new/standard/city/041.jpg" class="card-img-top" alt="{{item.title }}" />
+            {% endif %}
+            <!-- <a href="{% url 'myapp:post_detail' item.id %}">
+                <div class="mask rgba-white-slight"></div>
+            </a> -->
+            <div class="card-body">
+                <h5 class="card-title">{{ item.title }}<small>{{ item.author }}</small></h5>
+                <p>{{ item.category }}</p>
+                <p class="card-text">{{ item.content|safe|truncatechars_html:30 }}</p>
+                <a href="{% url 'myapp:post_detail' item.id %}" type="button" class="btn btn-primary">もっと読む</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
